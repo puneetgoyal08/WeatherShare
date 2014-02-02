@@ -145,7 +145,14 @@
 }
 
 - (IBAction)changePage:(id)sender{
-    [self.scrollView setContentOffset:CGPointMake(self.view.frame.size.width*self.pageControl.currentPage, 0)];
+    [UIView animateWithDuration:0.5
+                          delay:0
+                        options:UIViewAnimationOptionTransitionNone
+                     animations:^{    [self.scrollView setContentOffset:CGPointMake(self.view.frame.size.width*self.pageControl.currentPage, 0)];
+}
+                     completion:nil];
+
+//    [self.scrollView setContentOffset:CGPointMake(self.view.frame.size.width*self.pageControl.currentPage, 0)];
 }
 
 - (UIImage *)rotateImage:(UIImage *)image onDegrees:(float)degrees
